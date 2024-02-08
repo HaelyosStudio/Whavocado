@@ -1,0 +1,486 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oxanium", sans-serif;
+}
+
+body {
+  background-color: #dad7cd;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+    display: block;
+}
+
+.outerShadow {
+  box-shadow: -10px 15px 15px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 8px 8px 0px rgba(0, 0, 0, 0.12), 0px 16px 16px 0px rgba(0, 0, 0, 0.12);
+}
+
+.innerShadow {
+    box-shadow: 9px 9px 9px 0px rgba(0,0,0,0.2) inset;
+}
+
+.textShadow {
+    text-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+}
+
+.navigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3a5a40;
+  width: 100vw;
+  height: 130px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 30px;
+}
+
+.navLeftBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #dad7cd;
+  width: 196px;
+  height: 75px;
+  border-radius: 20px;
+  margin: 10px 0px 10px 15px;
+}
+
+.navRightBox {
+    display: none;
+    padding-right: 10px;
+}
+
+.navOptions {
+    background-color: #DAD7CD;
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #344e41;
+    width: 200px;
+    height: 40px;
+
+}
+
+.playerAvatar {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.playerInfoBox {
+  margin-left: 5px;
+}
+
+.playerName,
+.playerHighScore {
+  font-size: 14px;
+  font-weight: 900;
+  color: #344e41;
+}
+
+.burgerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #dad7cd;
+  border-radius: 20px;
+  width: 54px;
+  height: 54px;
+  gap: 5px;
+  margin-right: 15px;
+}
+
+.burgerDiv {
+  background-color: #344e41;
+  width: 26px;
+  height: 4px;
+  border-radius: 20px;
+}
+
+.mainBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.burgerOptionsBox {
+    position: absolute;
+    top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: #A3B18A;
+    width: 100vw;
+    height: 249px;
+}
+
+.burgerOptions {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bolder;
+    transition-duration: 0.5s;
+    color: #344e41;
+    background-color: #DAD7CD;
+    border: none;
+    border-radius: 20px;
+    width: 305px;
+    height: 40px;
+}
+
+.burgerOptions:hover {
+    text-transform: uppercase;
+    font-size: 24px;
+    background-color: #588157;
+    color: #DAD7CD;
+    transition-duration: 0.5s;
+    border: none;
+    border-radius: 20px;
+    width: 305px;
+    height: 40px;
+}
+
+.rulesBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 145px;
+    background-color: #3A5A40;
+    color: white;
+    border-radius: 20px;
+    width: 315px;
+    height: 228px;
+}
+
+.rulesTitle {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rulesText {
+    margin-top: 10px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.leaderboardBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 145px;
+    background-color: #3A5A40;
+    color: white;
+    border-radius: 20px;
+    width: 315px;
+    height: 228px;
+}
+
+.leaderboardTitle {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.settingsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 145px;
+    background-color: #3A5A40;
+    color: white;
+    border-radius: 20px;
+    width: 315px;
+    height: 228px;
+}
+
+.settingsTitle {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gameSectionBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a5a40;
+  border-radius: 20px;
+  width: 315px;
+  height: 400px;
+  margin-top: 150px;
+  /* margin-top: 270px;  Pour les options ouvertes*/
+}
+
+.gameInfosBox {
+    display: flex;
+    justify-content: center;
+    max-width: 691px;
+    width: 315px;
+    height: 10px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.scoreText {
+    color: #DAD7CD;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    height: 18px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.gridContainer {
+  width: 315px;
+  height: 320px;
+  display: grid;
+    align-items: center;
+    justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  padding: 5px 0px 5px 0px;
+}
+
+.oval {
+  width: 70px;
+  height: 45px;
+  background-color: #a3b18a;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 425px) {
+    .gameSectionBox {
+        width: 90vw;
+    }
+
+    .rulesBox {
+        width: 90vw;
+    }
+
+    .gridContainer {
+        width: 380px;
+        height: 300px;
+        gap: 20px;
+    }
+
+    .oval {
+        width: 65%;
+        height: 55%;
+    }
+
+    .gameInfosBox {
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+    .burgerOptionsBox {
+        max-width: 691px;
+        width: 90vw;
+    }
+
+    .settingsBox {
+        max-width: 691px;
+        width: 90vw;
+    }
+    
+    .leaderboardBox {
+        max-width: 691px;
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .gameInfosBox {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .gridContainer {
+        width: 500px;
+        height: 350px;
+        gap: 5px;
+    }
+
+    .oval {
+        width: 55%;
+        height: 45%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .burgerButton {
+        display: none;
+    }
+
+    .navLeftBox {
+        min-width: 250px;
+        width: 250px;
+        height: 90px;
+        margin-left: 10px;
+    }
+
+    .playerAvatar {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .playerName, .playerHighScore {
+        font-size: 14px;
+    }
+
+    .navRightBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 500px;
+        gap: 10px;
+    }
+
+    .gameSectionBox {
+        max-width: 691px;
+    }
+
+    .rulesBox {
+        max-width: 691px;
+    }
+
+    .burgerOptionsBox {
+        display: none;
+    }
+
+    .leaderboardBox {
+        max-width: 691px;
+    }
+
+    .settingsBox {
+        max-width: 691px;
+    }
+
+    .gameInfosBox {
+        max-width: 691px;
+    }
+
+    .scoreText {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navRightBox {
+        display: flex;
+        flex-wrap: wrap;
+        width: 500px;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 1051px) {
+    .navRightBox {
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        gap: 10px;
+    }
+    
+    .navOptions {
+        width: 175px;
+    }
+}
+
+@media screen and (min-width: 1245px) {
+
+    .gameSectionBox {
+    width: 800px;
+    height: 560px;
+    margin-top: 100px;
+    margin-left: 40%;
+    }
+
+    .gameInfosBox {
+        margin-top: -10px;
+        margin-bottom: 25px;
+    }
+
+    .scoreText {
+        font-size: 24px;
+    }
+
+    .gridContainer {
+    width: 600px;
+    height: 450px;
+    gap: 20px;
+    }
+
+    .oval {
+    width: 150px;
+    height: 85px;
+    }
+
+    .rulesBox {
+    top: 230px;
+    left: 7%;
+    border-radius: 20px;
+    width: 35%;
+    height: 560px;
+    }
+
+    .leaderboardBox {
+        top: 230px;
+        left: 7%;
+        border-radius: 20px;
+        width: 35%;
+        height: 560px;
+    }
+
+    .settingsBox {
+        top: 230px;
+        left: 7%;
+        border-radius: 20px;
+        width: 35%;
+        height: 560px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navLeftBox {
+        min-width: 290px;
+        width: 290px;
+        height: 110px;
+        margin-left: 10px;
+    }
+
+    .playerAvatar {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .playerName, .playerHighScore {
+        font-size: 16px;
+    }
+}

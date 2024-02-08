@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oxanium:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Whavocado</title>
+</head>
+<body>
+    <header class="navigationBar">
+        <div class="navLeftBox innerShadow">
+            <img class="playerAvatar outerShadow" src="/assets/playerAvatar.jpg" alt="">
+            <div class="playerInfoBox">
+                <span id="playerName" class="playerName">Player's Name</span><br>
+                <span id="playerHighScore" class="playerHighScore">Highscore : </span>
+            </div>
+        </div>
+        <div class="navRightBox">
+            <button class="navOptions outerShadow textShadow">Play</button>
+            <button class="navOptions outerShadow textShadow">Rules</button>
+            <button class="navOptions outerShadow textShadow">Leaderboard</button>
+            <button class="navOptions outerShadow textShadow">Settings</button>
+        </div>
+        <div class="burgerButton innerShadow">
+            <div class="burgerDiv outerShadow"></div>
+            <div class="burgerDiv outerShadow"></div>
+            <div class="burgerDiv outerShadow"></div>
+        </div>
+    </header>
+    <div class="mainBox">
+        <div class="burgerOptionsBox innerShadow hidden">
+            <button class="burgerOptions outerShadow textShadow">Play</button>
+            <button class="burgerOptions outerShadow textShadow">Rules</button>
+            <button class="burgerOptions outerShadow textShadow">Leaderboard</button>
+            <button class="burgerOptions outerShadow textShadow">Settings</button>
+        </div>
+        <div class="rulesBox innerShadow hidden">
+            <h3 class="rulesTitle">Game's Rules</h3>
+            <p class="rulesText">
+                Tap on the evil vegetables.<br>
+                Avoid the cute avocados.
+            </p>
+        </div>
+        <div class="leaderboardBox innerShadow hidden">
+            <h3 class="leaderboardTitle">Leaderboard</h3>
+            <div id="playerList"></div>
+        </div>
+        <div class="settingsBox innerShadow hidden">
+            <h3 class="settingsTitle">Settings</h3>
+        </div>
+        <section class="gameSectionBox innerShadow">
+            <div class="gameInfosBox">
+                <span class="scoreText textShadow" id="scoreText">Score : </span>
+            </div>
+            <div class="gridContainer">
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+                <div class="oval innerShadow"></div>
+              </div>
+        </section>
+    </div>
+    <script src="/js/burger.js"></script>
+    <script src="/js/game.js"></script>
+</body>
+</html>
