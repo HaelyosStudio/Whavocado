@@ -24,34 +24,37 @@
             <button class="navOptions outerShadow textShadow">Leaderboard</button>
             <button class="navOptions outerShadow textShadow">Settings</button>
         </div>
-        <div class="burgerButton innerShadow">
+        <div class="burgerButton innerShadow" id="burgerButton">
             <div class="burgerDiv outerShadow"></div>
             <div class="burgerDiv outerShadow"></div>
             <div class="burgerDiv outerShadow"></div>
         </div>
     </header>
     <div class="mainBox">
-        <div class="burgerOptionsBox innerShadow hidden">
-            <button class="burgerOptions outerShadow textShadow">Play</button>
-            <button class="burgerOptions outerShadow textShadow">Rules</button>
-            <button class="burgerOptions outerShadow textShadow">Leaderboard</button>
-            <button class="burgerOptions outerShadow textShadow">Settings</button>
+        <div class="burgerOptionsBox innerShadow hidden" id="burgerOptionsBox">
+            <button class="burgerOptions outerShadow textShadow" id="playButton">Play</button>
+            <button class="burgerOptions outerShadow textShadow" id="rulesButton">Rules</button>
+            <button class="burgerOptions outerShadow textShadow" id="leaderboardButton">Leaderboard</button>
+            <button class="burgerOptions outerShadow textShadow" id="settingsButton">Settings</button>
         </div>
-        <div class="rulesBox innerShadow hidden">
-            <h3 class="rulesTitle">Game's Rules</h3>
-            <p class="rulesText">
-                Tap on the evil vegetables.<br>
-                Avoid the cute avocados.
-            </p>
+        <div class="rulesBox innerShadow hidden" id="rulesBox">
+            <div class="rulesTextBox hidden" id="rulesTextBox">
+                <h3 class="rulesTitle">Game's Rules</h3>
+                <p class="rulesText">
+                    Tap on the evil vegetables.<br>
+                    Avoid the cute avocados.
+                </p>
+            </div>
+            <button class="closeButton innerShadow hidden" id="closeButton"><div class="closeX textShadow">x</div></button>
         </div>
-        <div class="leaderboardBox innerShadow hidden">
+        <div class="leaderboardBox innerShadow hidden" id="leaderboardBox">
             <h3 class="leaderboardTitle">Leaderboard</h3>
             <div id="playerList"></div>
         </div>
-        <div class="settingsBox innerShadow hidden">
+        <div class="settingsBox innerShadow hidden" id="settingsBox">
             <h3 class="settingsTitle">Settings</h3>
         </div>
-        <section class="gameSectionBox innerShadow">
+        <section class="gameSectionBox innerShadow" id="gameSectionBox">
             <div class="gameInfosBox">
                 <span class="scoreText textShadow" id="scoreText">Score : </span>
             </div>

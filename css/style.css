@@ -94,15 +94,39 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #dad7cd;
+  transition-duration: 0.3s;
   border-radius: 20px;
   width: 54px;
   height: 54px;
   gap: 5px;
   margin-right: 15px;
+  cursor: pointer;
 }
+
+.burgerButton:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #588157;
+    transition-duration: 0.3s;
+    border-radius: 20px;
+    width: 54px;
+    height: 54px;
+    gap: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  .burgerButton:hover .burgerDiv {
+    transition-duration: 0.3s;
+    background-color:  #DAD7CD;
+  }
+  
 
 .burgerDiv {
   background-color: #344e41;
+  transition-duration: 0.3s;
   width: 26px;
   height: 4px;
   border-radius: 20px;
@@ -151,13 +175,14 @@ body {
     border-radius: 20px;
     width: 305px;
     height: 40px;
+    cursor: pointer;
 }
 
 .rulesBox {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     position: absolute;
     top: 145px;
     background-color: #3A5A40;
@@ -165,6 +190,54 @@ body {
     border-radius: 20px;
     width: 315px;
     height: 228px;
+}
+
+.rulesTextBox {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: #DAD7CD;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+.closeButton:hover {
+    background-color: #3a5a40;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.closeButton:hover .closeX {
+    transition-duration: 0.3s;
+    color: #DAD7CD;
+}
+
+.closeX {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3a5a40;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2px;
+    transition-duration: 0.3s;
 }
 
 .rulesTitle {
@@ -300,6 +373,7 @@ body {
     }
 
     .burgerOptionsBox {
+        border-radius: 20px;
         max-width: 691px;
         width: 90vw;
     }
