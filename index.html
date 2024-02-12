@@ -19,10 +19,10 @@
             </div>
         </div>
         <div class="navRightBox">
-            <button class="navOptions outerShadow textShadow">Play</button>
-            <button class="navOptions outerShadow textShadow">Rules</button>
-            <button class="navOptions outerShadow textShadow">Leaderboard</button>
-            <button class="navOptions outerShadow textShadow">Settings</button>
+            <button class="navOptions outerShadow textShadow" id="navPlay">Play</button>
+            <button class="navOptions outerShadow textShadow navRules">Rules</button>
+            <button class="navOptions outerShadow textShadow navLeaderboard">Leaderboard</button>
+            <button class="navOptions outerShadow textShadow navSettings">Settings</button>
         </div>
         <div class="burgerButton innerShadow" id="burgerButton">
             <div class="burgerDiv outerShadow"></div>
@@ -45,14 +45,16 @@
                     Avoid the cute avocados.
                 </p>
             </div>
-            <button class="closeButton innerShadow hidden" id="closeButton"><div class="closeX textShadow">x</div></button>
+            <button class="closeButton innerShadow" id="closeRulesButton"><div class="closeX textShadow">x</div></button>
         </div>
         <div class="leaderboardBox innerShadow hidden" id="leaderboardBox">
             <h3 class="leaderboardTitle">Leaderboard</h3>
             <div id="playerList"></div>
+            <button class="closeButton innerShadow" id="closeLeaderboardButton"><div class="closeX textShadow">x</div></button>
         </div>
         <div class="settingsBox innerShadow hidden" id="settingsBox">
             <h3 class="settingsTitle">Settings</h3>
+            <button class="closeButton innerShadow" id="closeSettingsButton"><div class="closeX textShadow">x</div></button>
         </div>
         <section class="gameSectionBox innerShadow" id="gameSectionBox">
             <div class="gameInfosBox">
