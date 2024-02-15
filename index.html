@@ -11,18 +11,18 @@
 </head>
 <body>
     <header class="navigationBar">
-        <div class="navLeftBox innerShadow">
+        <div class="navLeftBox innerShadow" id="navLeftBox">
             <img class="playerAvatar outerShadow" src="assets/playerAvatar.jpg" alt="">
             <div class="playerInfoBox">
-                <span id="playerName" class="playerName">Player's Name</span><br>
-                <span id="playerHighScore" class="playerHighScore">Highscore : </span>
+                <button id="playerName" class="playerName textShadow">Click here to login</button><br>
+                <span id="playerHighScore" class="playerHighScore textShadow hidden">Highscore: </span>
             </div>
         </div>
         <div class="navRightBox">
             <button class="navOptions outerShadow textShadow" id="navPlay">Play</button>
-            <button class="navOptions outerShadow textShadow navRules">Rules</button>
-            <button class="navOptions outerShadow textShadow navLeaderboard">Leaderboard</button>
-            <button class="navOptions outerShadow textShadow navSettings">Settings</button>
+            <button class="navOptions outerShadow textShadow" id="navRules">Rules</button>
+            <button class="navOptions outerShadow textShadow" id="navLeaderboard">Leaderboard</button>
+            <button class="navOptions outerShadow textShadow" id="navSettings">Settings</button>
         </div>
         <div class="burgerButton innerShadow" id="burgerButton">
             <div class="burgerDiv outerShadow"></div>
@@ -59,21 +59,33 @@
         <section class="gameSectionBox innerShadow" id="gameSectionBox">
             <div class="gameInfosBox">
                 <span class="scoreText textShadow" id="scoreText">Score : </span>
+                <span class="timerText textShadow" id="timerText">30</span>
+                <div class="buttons">
+                    <button class="startButton outerShadow textShadow" id="startButton">Start</button>
+                    <button class="pauseButton outerShadow textShadow hidden" id="pauseButton">Pause</button>
+                </div>
             </div>
-            <div class="gridContainer">
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
-                <div class="oval innerShadow"></div>
+            <div class="gridContainer" id="gridContainer">
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
+                <div class="avocadoHole innerShadow"></div>
               </div>
         </section>
+        <div class="blurredBackground hidden" id="connectBG"></div>
+        <div class="playerNameInput outerShadow hidden" id="playerNameInput">
+            <input type="text" placeholder="Enter your username" name="playerName" id="nameInput" class="nameInput innerShadow">
+            <button class="nameOutput outerShadow" id="nameOutput">Connect</button>
+        </div>
     </div>
-    <script src="js/burger.js"></script>
-    <script src="js/game.js"></script>
+    <script src="js/burger.js" type="module"></script>
+    <script src="js/navBar.js" type="module"></script>
+    <script src="js/game.js" type="module"></script>
+    <script src="js/connect.js" type="module"></script>
 </body>
 </html>
