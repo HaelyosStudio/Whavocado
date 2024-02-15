@@ -1,4 +1,5 @@
 import { ConstManager, VarManager } from "./class/ConstManager.js";
+import { createPlayerLeaderboard } from "./leaderboard.js";
 
 ConstManager.gameRunning = false;
 ConstManager.score = 0;
@@ -23,9 +24,27 @@ function startTimer() {
 }
 
 function pickRandomColor() {
-    const randomIndex = Math.floor(Math.random() * VarManager.colors.length);
-    return VarManager.colors[randomIndex];
+    const colorProbabilities = [
+        { color: '#A7C7E7', chance: 0.64 },  // Blue - 64% chance
+        { color: '#FAA0A0', chance: 0.3 },  // Red - 30% chance
+        { color: '#FAC898', chance: 0.06 },  // Orange - 6% chance
+    ];
+
+    let random = Math.random();
+    let cumulativeProbability = 0;
+
+    for (const colorProb of colorProbabilities) {
+        cumulativeProbability += colorProb.chance;
+        if (random <= cumulativeProbability) {
+            return colorProb.color;
+        }
+    }
+
+    // Fallback: return a random color from the list if probabilities don't add up to 1
+    const randomIndex = Math.floor(Math.random() * colorProbabilities.length);
+    return colorProbabilities[randomIndex].color;
 }
+
 
 const applyRandomColorToAvocado = (() => {
     let previousColor = "";
@@ -72,16 +91,31 @@ function stopGame() {
             username: username,
             highscore: ConstManager.score
         }));
+        createPlayerLeaderboard();
     }
 
     document.getElementById('timerText').textContent = VarManager.timer = 30;
     ConstManager.score = 0;
     ConstManager.scoreDisplay.textContent = "Score : " + ConstManager.score;
+    updateHighscoreDisplay();
 }
+
+function updateHighscoreDisplay() {
+    const username = getQueryParam('username');
+    const playerDataString = localStorage.getItem(username);
+    if (playerDataString) {
+        const playerData = JSON.parse(playerDataString);
+        const highscore = playerData.highscore;
+        ConstManager.playerHighscore.textContent = "Highscore: " + highscore;
+    }
+}
+
+updateHighscoreDisplay();
 
 function updateScore(points) {
     ConstManager.score += points;
     ConstManager.scoreDisplay.textContent = "Score : " + ConstManager.score;
+    updateHighscoreDisplay();
 }
 
 function pauseGame() {
@@ -125,6 +159,8 @@ function gameInit() {
                 updateScore(10);
             } else if (backgroundColor === 'rgb(250, 160, 160)') {
                 updateScore(-15);
+            } else if (backgroundColor === 'rgb(250, 200, 152)') {
+                updateScore(25)
             }
             avocadoHole.style.backgroundColor = "#a3b18a";
         });

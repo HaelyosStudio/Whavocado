@@ -267,7 +267,8 @@ body {
 }
 
 .rulesText {
-    margin-top: 10px;
+    margin-top: 50px;
+    font-weight: bold;
     text-align: center;
     line-height: 25px;
 }
@@ -284,12 +285,61 @@ body {
     border-radius: 20px;
     width: 315px;
     height: 228px;
+    overflow: auto;
 }
 
 .leaderboardTitle {
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.leaderboardPlayerBG {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #dad7cd;
+    width: 250px;
+    height: 75px;
+    border-radius: 20px;
+    margin: 10px 0px 10px 15px;
+    transition-duration: 0.3s;
+}
+
+.leaderboardInfoBox {
+    margin-left: 5px;
+}
+
+.leaderboardPlayerAvatar {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.leaderboardPlayerName, .leaderboardPlayerHighscore {
+    font-size: 14px;
+    font-weight: 900;
+    color: #344e41;
+}
+
+.bestPlayer {
+    width: 265px;
+    height: 75px;
+    background-color: #E7D27C;
+}
+
+.secondBestPlayer {
+    width: 260px;
+    height: 75px;
+    background-color: #BBC2CC;
+}
+
+.thirdBestPlayer {
+    width: 255px;
+    height: 75px;
+    background-color: #e5af60;
 }
 
 .settingsBox {
@@ -491,6 +541,22 @@ body {
         width: 250px;
     }
 
+    .rulesText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .rulesPText {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+        width: 250px;
+    }
 }
 
 @media screen and (min-width: 425px) {
@@ -542,6 +608,23 @@ body {
         width: 300px;
     }
 
+    .rulesText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .rulesPText {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+        width: 75%;
+    }
+
 }
 
 @media screen and (min-width: 550px) {
@@ -559,6 +642,23 @@ body {
     .avocadoHole {
         width: 55%;
         height: 45%;
+    }
+
+    .rulesText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .rulesPText {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+        width: 75%;
     }
 }
 
@@ -598,6 +698,24 @@ body {
     .rulesBox {
         max-width: 691px;
     }
+
+    .rulesText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .rulesPText {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 450px;
+    }
+    
 
     .burgerOptionsBox {
         display: none;
@@ -674,6 +792,24 @@ body {
     width: 35%;
     height: 560px;
     }
+
+    .rulesText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .rulesPText {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        width: 375px;
+    }
+    
 
     .leaderboardBox {
         top: 230px;

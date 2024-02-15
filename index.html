@@ -12,7 +12,7 @@
 <body>
     <header class="navigationBar">
         <div class="navLeftBox innerShadow" id="navLeftBox">
-            <img class="playerAvatar outerShadow" src="assets/playerAvatar.jpg" alt="">
+            <img class="playerAvatar outerShadow" src="assets/playerAvatar.jpg" alt="Player Avatar">
             <div class="playerInfoBox">
                 <button id="playerName" class="playerName textShadow">Click here to login</button><br>
                 <span id="playerHighScore" class="playerHighScore textShadow hidden">Highscore: </span>
@@ -41,8 +41,17 @@
             <div class="rulesTextBox hidden" id="rulesTextBox">
                 <h3 class="rulesTitle">Game's Rules</h3>
                 <p class="rulesText">
-                    Tap on the evil vegetables.<br>
-                    Avoid the cute avocados.
+                    <p class="rulesPText">
+                        Use your cursor to click on the <span style="color: #A7C7E7;">blue dots</span> to get <span style="color: #A7C7E7;">10 points</span>.
+                    </p>
+                    <p class="rulesPText">
+                        Avoid clicking on the <span style="color: #FAA0A0">red dots</span> as they take away <span style="color: #FAA0A0">15 points</span> !
+                    </p>
+                    <p class="rulesPText">
+                        Sometimes you may have the chance to see
+                        a <span style="color: #FAC898;">golden dot</span> don't miss it or you want 
+                        have those free <span style="color: #FAC898;">25 points</span> !
+                    </p>
                 </p>
             </div>
             <button class="closeButton innerShadow" id="closeRulesButton"><div class="closeX textShadow">x</div></button>
@@ -87,5 +96,6 @@
     <script src="js/navBar.js" type="module"></script>
     <script src="js/game.js" type="module"></script>
     <script src="js/connect.js" type="module"></script>
+    <script src="js/leaderboard.js" type="module"></script>
 </body>
 </html>

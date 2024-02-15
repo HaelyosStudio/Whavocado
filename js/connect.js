@@ -1,5 +1,6 @@
 import { ConstManager } from "./class/ConstManager.js";
 import { Player } from "./class/playerInfos.js";
+import { createPlayerLeaderboard } from "./leaderboard.js";
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -8,7 +9,7 @@ function getQueryParam(param) {
 
 ConstManager.playerName.addEventListener('click', playerRegister);
 
-function playerRegister() {
+export function playerRegister() {
     ConstManager.connectBG.classList.remove('hidden');
     ConstManager.playerNameInput.classList.remove('hidden');
 }
@@ -71,6 +72,7 @@ function registerPlayer() {
         window.history.replaceState({}, document.title, newUrl);
     }
 
+    createPlayerLeaderboard();
     updateUrlWithUsername(playerName);
 }
 
