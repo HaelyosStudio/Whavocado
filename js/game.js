@@ -205,6 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function gameInit() {
+        ConstManager.pauseButton.classList.remove('hidden');
+        ConstManager.startButton.classList.add('hidden');
         applyRandomColorToAvocado(ConstManager.avocadoHoles, chosenDifficulty);
         console.log(chosenDifficulty);
         console.log("Game started !");
@@ -213,10 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
         colorChangeInterval = setInterval(() => {
             if(ConstManager.gameRunning){
                 applyRandomColorToAvocado(ConstManager.avocadoHoles, chosenDifficulty);
-                ConstManager.pauseButton.classList.remove('hidden');
-                ConstManager.startButton.classList.add('hidden');
             }
-        }, 1500);
+        }, 1000);
     
         ConstManager.avocadoHoles.forEach(avocadoHole => {
             avocadoHole.addEventListener('click', function() {
