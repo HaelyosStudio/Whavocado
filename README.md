@@ -67,5 +67,5 @@ Mon projet :
 [![project](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://haelyosstudio.github.io/Whavocado/)
 
 Ma maquette Figma :
-[![figma][(https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/fvukjiTqWx4Ube7yySACie/Whavocado?type=design&node-id=0%3A1&mode=design&t=rux2Nv4PebXOkpP3-1)https://www.figma.com/file/fvukjiTqWx4Ube7yySACie/Whavocado?type=design&node-id=0%3A1&mode=design&t=rux2Nv4PebXOkpP3-1)
+[![figma][(https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/file/fvukjiTqWx4Ube7yySACie/Whavocado?type=design&node-id=0%3A1&mode=design&t=rux2Nv4PebXOkpP3-1)
 
