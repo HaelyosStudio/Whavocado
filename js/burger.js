@@ -9,7 +9,7 @@ if (window.innerWidth <= 767) {
     function burgerDisplay() {
     
         if (ConstManager.gameSection.style.marginTop === '270px') {
-            ConstManager.gameSection.style.marginTop = '150px';
+            ConstManager.gameSection.style.marginTop = '50px';
             ConstManager.burgerSection.classList.add('hidden');
         } else {
             ConstManager.gameSection.style.marginTop = '270px';
@@ -35,7 +35,7 @@ if (window.innerWidth <= 767) {
     
     function playDisplay() {
         if (ConstManager.gameSection.style.marginTop === '270px') {
-            ConstManager.gameSection.style.marginTop = '150px';
+            ConstManager.gameSection.style.marginTop = '50px';
             ConstManager.burgerSection.classList.add('hidden');
             location.reload();
         }
@@ -80,7 +80,7 @@ if (window.innerWidth <= 767) {
     function rulesClose() {
     
         ConstManager.rulesSection.classList.add('hidden');
-        ConstManager.gameSection.style.marginTop = '150px';
+        ConstManager.gameSection.style.marginTop = '50px';
     }
     
     document.getElementById('closeLeaderboardButton').addEventListener('click', function() {
@@ -90,7 +90,7 @@ if (window.innerWidth <= 767) {
     function leaderboardClose() {
     
         ConstManager.leaderboardSection.classList.add('hidden');
-        ConstManager.gameSection.style.marginTop = '150px';
+        ConstManager.gameSection.style.marginTop = '50px';
     }
     
     document.getElementById('closeSettingsButton').addEventListener('click', function() {
@@ -100,6 +100,6 @@ if (window.innerWidth <= 767) {
     function settingsClose() {
     
         ConstManager.settingsSection.classList.add('hidden');
-        ConstManager.gameSection.style.marginTop = '150px';
+        ConstManager.gameSection.style.marginTop = '50px';
     }
 }
