@@ -125,6 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (usernameParam) {
         removeUsernameParamFromUrl();
     }
+    createPlayerLeaderboard();
 });
 
 function removeUsernameParamFromUrl() {
