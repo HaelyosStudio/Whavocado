@@ -27,6 +27,7 @@ export const ConstManager = {
     easyButton: document.getElementById('easyButton'),
     mediumButton: document.getElementById('mediumButton'),
     hardButton: document.getElementById('hardButton'),
+    currentDiff: document.getElementById('currentDiff'),
 };
 
 export const VarManager = {

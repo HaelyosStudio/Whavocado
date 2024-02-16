@@ -354,12 +354,19 @@ body {
     border-radius: 20px;
     width: 315px;
     height: 228px;
+    overflow: auto;
 }
 
 .settingsTitle {
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.difficultyText {
+    margin-top: 20px;
+    font-weight: bold;
+
 }
 
 .difficultiesButtonsBox {

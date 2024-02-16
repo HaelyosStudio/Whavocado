@@ -49,16 +49,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('easyButton').addEventListener('click', function() {
         chosenDifficulty = 'easy';
+        ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #4ea84f; font-weight: bold;'>Easy</span>";
         console.log("Easy difficulty chosen");
     });
 
     document.getElementById('mediumButton').addEventListener('click', function() {
         chosenDifficulty = 'medium';
+        ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #ec5f00; font-weight: bold;'>Medium</span>";
         console.log("Medium difficulty chosen");
     });
 
     document.getElementById('hardButton').addEventListener('click', function() {
         chosenDifficulty = 'hard';
+        ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #e94528; font-weight: bold;'>Hard</span>";
         console.log("Hard difficulty chosen");
     });
 
@@ -74,17 +77,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'easy':
                     timeoutDuration = 1000; // Easy difficulty
                     console.log("Easy difficulty applied");
+                    ConstManager.currentDiff.textContent = "Current difficulty : Easy";
                     break;
                 case 'medium':
                     timeoutDuration = 650; // Medium difficulty
                     console.log("Medium difficulty applied");
+                    ConstManager.currentDiff.textContent = "Current difficulty : Medium";
                     break;
                 case 'hard':
                     timeoutDuration = 450; // Hard difficulty
+                    ConstManager.currentDiff.textContent = "Current difficulty : Hard";
                     console.log("Hard difficulty applied");
                     break;
                 default:
                     timeoutDuration = 1000; // Default to easy difficulty
+                    ConstManager.currentDiff.textContent = "Current difficulty : Default";
                     console.log("Default difficulty applied");
             }
 
