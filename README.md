@@ -1,6 +1,8 @@
+# CDA
 
-## Projet Simplon
+## Projet Whack a mole
 
+### Résumé
 Ce brief était à faire seul.
 J'ai décidé de réaliser un projet HTML/CSS/JS. J'ai commencé par analyser la demande et créer un Trello sur lequel j'ai pu m'organiser. Ensuite, j'ai créé un dépôt Github pour partager mon code.
 ## Commandes à effectuer
