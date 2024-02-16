@@ -29,6 +29,7 @@ export function createPlayerLeaderboard() {
         playerDataArray.forEach((playerData, index) => {
             const username = playerData.username;
             const highscore = playerData.highscore;
+            const profileImg = playerData.profileImg || 'assets/playerAvatar.jpg';
 
             let playerRanking = '';
             switch (index) {
@@ -54,7 +55,6 @@ export function createPlayerLeaderboard() {
 
                 const playerAvatarImg = document.createElement('img');
                 playerAvatarImg.classList.add('leaderboardPlayerAvatar', 'outerShadow');
-                playerAvatarImg.src = 'assets/playerAvatar.jpg';
                 playerAvatarImg.alt = '';
 
                 const playerInfoBoxDiv = document.createElement('div');
@@ -80,6 +80,8 @@ export function createPlayerLeaderboard() {
                 playerDiv.appendChild(playerInfoBoxDiv);
 
                 playerListDiv.appendChild(playerDiv);
+
+                playerAvatarImg.src = profileImg;
             }
         });
     }
@@ -87,7 +89,9 @@ export function createPlayerLeaderboard() {
     updateLeaderboard();
 
     window.addEventListener('storage', function (event) {
-        updateLeaderboard();
+        if (event.key === 'localStorage' && event.newValue !== event.oldValue) {
+            updateLeaderboard();
+        }
     });
 
     window.addEventListener('DOMContentLoaded', function() {

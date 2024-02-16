@@ -9,6 +9,39 @@ function getQueryParam(param) {
 
 ConstManager.playerName.addEventListener('click', playerRegister);
 
+document.getElementById('setAvatarButton').addEventListener('click', function() {
+    document.getElementById('avatarInput').click();
+});
+
+document.getElementById('avatarInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        document.getElementById('playerAvatar').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+
+function initializeAvatar() {
+    console.log("Initializing avatar...");
+    const playerName = getQueryParam('username');
+    if (playerName) {
+        const playerDataString = localStorage.getItem(playerName);
+        if (playerDataString) {
+            const playerData = JSON.parse(playerDataString);
+            if (playerData.profileImg) {
+                console.log("Found profile image in localStorage:", playerData.profileImg);
+                document.getElementById('playerAvatar').src = playerData.profileImg;
+                return;
+            }
+        }
+    }
+    console.log("No profile image found in localStorage. Setting default image.");
+    document.getElementById('playerAvatar').src = 'assets/playerAvatar.jpg';
+}
+
+window.addEventListener('load', initializeAvatar);
+
 export function playerRegister() {
     ConstManager.connectBG.classList.remove('hidden');
     ConstManager.playerNameInput.classList.remove('hidden');
@@ -27,6 +60,12 @@ ConstManager.nameOutput.addEventListener('click', function() {
     }
 })
 
+function updateUrlWithUsername(username) {
+    const baseUrl = window.location.origin + window.location.pathname;
+    const newUrl = `${baseUrl}?username=${encodeURIComponent(username)}`;
+    window.history.replaceState({}, document.title, newUrl);
+}
+
 function registerPlayer() {
     const playerName = ConstManager.nameInput.value.trim();
 
@@ -35,46 +74,44 @@ function registerPlayer() {
         return;
     }
 
+    let player;
+
     const existingPlayerDataString = localStorage.getItem(playerName);
     if (existingPlayerDataString) {
+        player = JSON.parse(existingPlayerDataString);
 
-        updateUrlWithUsername(playerName);
-        alert("Player already registered.");
-        ConstManager.nameInput.value = "";
-        ConstManager.connectBG.classList.add('hidden');
-        ConstManager.playerNameInput.classList.add('hidden');
-        ConstManager.playerRegistered = true;
-        return;
+        const avatarInput = document.getElementById('avatarInput');
+        if (avatarInput.files.length > 0) {
+            const file = avatarInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                player.profileImg = e.target.result;
+                localStorage.setItem(playerName, JSON.stringify(player));
+                document.getElementById('playerAvatar').src = e.target.result;
+                alert("Player registered successfully!");
+            };
+            reader.readAsDataURL(file);
+        }
+    } else {
+        const avatarImgData = document.getElementById('playerAvatar').src;
+        player = new Player(playerName, 0, avatarImgData);
+        localStorage.setItem(playerName, JSON.stringify(player));
+        alert("Player registered successfully!");
     }
 
-    const player = new Player(playerName, 0);
-
-    localStorage.setItem(playerName, JSON.stringify(player));
-
-    alert("Player registered successfully!");
-
     ConstManager.nameInput.value = "";
-
     setTimeout(function() {
         console.log("Waited for 2 seconds!");
     }, 2000);
 
     ConstManager.connectBG.classList.add('hidden');
     ConstManager.playerNameInput.classList.add('hidden');
-
     ConstManager.playerRegistered = true;
-
-    function updateUrlWithUsername(username) {
-
-        const baseUrl = window.location.origin + window.location.pathname;
-        const newUrl = `${baseUrl}?username=${encodeURIComponent(username)}`;
-    
-        window.history.replaceState({}, document.title, newUrl);
-    }
 
     createPlayerLeaderboard();
     updateUrlWithUsername(playerName);
 }
+
 
 window.addEventListener('DOMContentLoaded', () => {
     const usernameParam = getQueryParam('username');

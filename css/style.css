@@ -362,6 +362,75 @@ body {
     letter-spacing: 1px;
 }
 
+.difficultiesButtonsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.easyButton {
+    background-color: #428643;
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #DAD7CD;
+    width: 200px;
+    height: 40px;
+    transition-duration: 0.3s;
+}
+
+.mediumButton {
+    background-color: #ec5f00;
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #DAD7CD;
+    width: 200px;
+    height: 40px;
+    transition-duration: 0.3s;
+}
+
+.hardButton {
+    background-color: #c23b22;
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #DAD7CD;
+    width: 200px;
+    height: 40px;
+    transition-duration: 0.3s;
+}
+
+.easyButton:hover {
+    background-color: #2F6030;
+    color: #DAD7CD;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.mediumButton:hover {
+    background-color: #9b3e00;
+    color: #DAD7CD;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.hardButton:hover {
+    background-color: #902c19;
+    color: #DAD7CD;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
 .gameSectionBox {
   display: flex;
   flex-direction: column;
@@ -372,7 +441,6 @@ body {
   width: 315px;
   height: 400px;
   margin-top: 150px;
-  /* margin-top: 270px;  Pour les options ouvertes*/
 }
 
 .gameInfosBox {
@@ -483,6 +551,29 @@ body {
     opacity: 100%;
 }
 
+.avatarButton {
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #344e41;
+    background-color: #DAD7CD;
+    border: none;
+    border-radius: 20px;
+    opacity: 100%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.avatarButton:hover {
+    background-color: #344e41;
+    color: #DAD7CD;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    opacity: 100%;
+}
+
 .timerText {
     width: 30px;
     height: 30px;
@@ -557,6 +648,11 @@ body {
         margin-bottom: 10px;
         width: 250px;
     }
+
+    .difficultiesButtonsBox {
+        margin-top: 20px;
+        gap: 15px;
+    }
 }
 
 @media screen and (min-width: 425px) {
@@ -625,6 +721,23 @@ body {
         width: 75%;
     }
 
+    .difficultiesButtonsBox {
+        margin-top: 20px;
+        width: 90vw;
+        gap: 15px;
+    }
+
+    .easyButton {
+        width: 60%;
+    }
+    
+    .mediumButton {
+        width: 60%;
+    }
+    
+    .hardButton {
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 550px) {
@@ -659,6 +772,24 @@ body {
         text-align: center;
         margin-bottom: 15px;
         width: 75%;
+    }
+
+    .difficultiesButtonsBox {
+        margin-top: 20px;
+        width: 90vw;
+        gap: 15px;
+    }
+
+    .easyButton {
+        width: 300px;
+    }
+    
+    .mediumButton {
+        width: 300px;
+    }
+    
+    .hardButton {
+        width: 300px;
     }
 }
 
@@ -825,6 +956,12 @@ body {
         border-radius: 20px;
         width: 35%;
         height: 560px;
+    }
+
+    .difficultiesButtonsBox {
+        margin-top: 50px;
+        width: 90vw;
+        gap: 30px;
     }
 }
 

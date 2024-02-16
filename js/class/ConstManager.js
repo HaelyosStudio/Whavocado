@@ -24,6 +24,9 @@ export const ConstManager = {
     startButton: document.getElementById('startButton'),
     pauseButton: document.getElementById('pauseButton'),
     gameRunning: false,
+    easyButton: document.getElementById('easyButton'),
+    mediumButton: document.getElementById('mediumButton'),
+    hardButton: document.getElementById('hardButton'),
 };
 
 export const VarManager = {
@@ -33,3 +36,4 @@ export const VarManager = {
     timerInterval: 1000,
     colors: ['#A7C7E7', '#FAA0A0', '#FAC898'],
 }
+

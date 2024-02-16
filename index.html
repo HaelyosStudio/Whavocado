@@ -12,7 +12,10 @@
 <body>
     <header class="navigationBar">
         <div class="navLeftBox innerShadow" id="navLeftBox">
-            <img class="playerAvatar outerShadow" src="assets/playerAvatar.jpg" alt="Player Avatar">
+            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+            <label for="avatarInput">
+                <img class="playerAvatar outerShadow" src="assets/playerAvatar.jpg" alt="Player Avatar" id="playerAvatar">
+            </label>
             <div class="playerInfoBox">
                 <button id="playerName" class="playerName textShadow">Click here to login</button><br>
                 <span id="playerHighScore" class="playerHighScore textShadow hidden">Highscore: </span>
@@ -49,7 +52,7 @@
                     </p>
                     <p class="rulesPText">
                         Sometimes you may have the chance to see
-                        a <span style="color: #FAC898;">golden dot</span> don't miss it or you want 
+                        a <span style="color: #FAC898;">golden dot</span> don't miss it or you won't 
                         have those free <span style="color: #FAC898;">25 points</span> !
                     </p>
                 </p>
@@ -62,8 +65,15 @@
             <button class="closeButton innerShadow" id="closeLeaderboardButton"><div class="closeX textShadow">x</div></button>
         </div>
         <div class="settingsBox innerShadow hidden" id="settingsBox">
-            <h3 class="settingsTitle">Settings</h3>
-            <button class="closeButton innerShadow" id="closeSettingsButton"><div class="closeX textShadow">x</div></button>
+            <div class="settingsHeaderBox">
+                <h3 class="settingsTitle">Settings</h3>
+                <button class="closeButton innerShadow" id="closeSettingsButton"><div class="closeX textShadow">x</div></button>
+            </div>
+            <div class="difficultiesButtonsBox">
+                <button class="difficultyButton easyButton outerShadow textShadow" id="easyButton">Easy</button>
+                <button class="difficultyButton mediumButton outerShadow textShadow" id="mediumButton">Medium</button>
+                <button class="difficultyButton hardButton outerShadow textShadow" id="hardButton">Hard</button>
+            </div>
         </div>
         <section class="gameSectionBox innerShadow" id="gameSectionBox">
             <div class="gameInfosBox">
@@ -89,7 +99,8 @@
         <div class="blurredBackground hidden" id="connectBG"></div>
         <div class="playerNameInput outerShadow hidden" id="playerNameInput">
             <input type="text" placeholder="Enter your username" name="playerName" id="nameInput" class="nameInput innerShadow">
-            <button class="nameOutput outerShadow" id="nameOutput">Connect</button>
+            <button class="nameOutput outerShadow textShadow" id="nameOutput">Connect</button>
+            <button class="avatarButton outerShadow textShadow" id="setAvatarButton">Set Profile picture</button>
         </div>
     </div>
     <script src="js/burger.js" type="module"></script>

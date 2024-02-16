@@ -16,9 +16,11 @@ if (window.innerWidth >= 768 && window.innerWidth <= 1244) {
             ConstManager.rulesSection.classList.remove('hidden');
             ConstManager.rulesText.classList.remove('hidden');
             ConstManager.gameSection.style.marginTop = '270px';
-        } else if (ConstManager.gameSection.style.marginTop === '270px') {
+        } else if (ConstManager.gameSection.style.marginTop === '270px' && ConstManager.leaderboardSection.className !== ('hidden') || ConstManager.settingsSection.className !== ('hidden')) {
             ConstManager.rulesSection.classList.add('hidden');
             ConstManager.rulesText.classList.add('hidden');
+            ConstManager.leaderboardSection.classList.add('hidden');
+            ConstManager.settingsSection.classList.add('hidden');
             ConstManager.gameSection.style.marginTop = '150px';
         }
     })   
@@ -28,8 +30,11 @@ if (window.innerWidth >= 768 && window.innerWidth <= 1244) {
         if (ConstManager.gameSection.style.marginTop !== '270px') {
             ConstManager.leaderboardSection.classList.remove('hidden');
             ConstManager.gameSection.style.marginTop = '270px';
-        } else if (ConstManager.gameSection.style.marginTop === '270px') {
+        } else if (ConstManager.gameSection.style.marginTop === '270px' && ConstManager.rulesSection.className !== ('hidden') || ConstManager.rulesText.className !== ('hidden') || ConstManager.settingsSection.className !== ('hidden')) {
+            ConstManager.rulesSection.classList.add('hidden');
+            ConstManager.rulesText.classList.add('hidden');
             ConstManager.leaderboardSection.classList.add('hidden');
+            ConstManager.settingsSection.classList.add('hidden');
             ConstManager.gameSection.style.marginTop = '150px';
         }
     })
@@ -39,7 +44,10 @@ if (window.innerWidth >= 768 && window.innerWidth <= 1244) {
         if (ConstManager.gameSection.style.marginTop !== '270px') {
             ConstManager.settingsSection.classList.remove('hidden');
             ConstManager.gameSection.style.marginTop = '270px';
-        } else if (ConstManager.gameSection.style.marginTop === '270px') {
+        } else if (ConstManager.gameSection.style.marginTop === '270px' && ConstManager.rulesSection.className !== ('hidden') || ConstManager.rulesText.className !== ('hidden') || ConstManager.leaderboardSection.className !== ('hidden')) {
+            ConstManager.rulesSection.classList.add('hidden');
+            ConstManager.rulesText.classList.add('hidden');
+            ConstManager.leaderboardSection.classList.add('hidden');
             ConstManager.settingsSection.classList.add('hidden');
             ConstManager.gameSection.style.marginTop = '150px';
         }
@@ -74,9 +82,11 @@ if (window.innerWidth >= 768 && window.innerWidth <= 1244) {
             ConstManager.rulesSection.classList.remove('hidden');
             ConstManager.rulesText.classList.remove('hidden');
             ConstManager.gameSection.style.marginLeft = '40%';
-        } else if (ConstManager.gameSection.style.marginLeft === '40%') {
+        } else if (ConstManager.gameSection.style.marginLeft === '40%' && ConstManager.leaderboardSection.className !== ('hidden') || ConstManager.settingsSection.className !== ('hidden')) {
             ConstManager.rulesSection.classList.add('hidden');
             ConstManager.rulesText.classList.add('hidden');
+            ConstManager.leaderboardSection.classList.add('hidden');
+            ConstManager.settingsSection.classList.add('hidden');
             ConstManager.gameSection.style.marginLeft = '0px';
         }
     })   
@@ -86,8 +96,11 @@ if (window.innerWidth >= 768 && window.innerWidth <= 1244) {
         if (ConstManager.gameSection.style.marginLeft !== '40%') {
             ConstManager.leaderboardSection.classList.remove('hidden');
             ConstManager.gameSection.style.marginLeft = '40%';
-        } else if (ConstManager.gameSection.style.marginLeft === '40%') {
+        } else if (ConstManager.gameSection.style.marginLeft === '40%' && ConstManager.rulesSection.className !== ('hidden') || ConstManager.rulesText.className !== ('hidden') || ConstManager.settingsSection.className !== ('hidden')) {
+            ConstManager.rulesSection.classList.add('hidden');
+            ConstManager.rulesText.classList.add('hidden');
             ConstManager.leaderboardSection.classList.add('hidden');
+            ConstManager.settingsSection.classList.add('hidden');
             ConstManager.gameSection.style.marginLeft = '0px';
         }
     })
@@ -97,7 +110,10 @@ if (window.innerWidth >= 768 && window.innerWidth <= 1244) {
         if (ConstManager.gameSection.style.marginLeft !== '40%') {
             ConstManager.settingsSection.classList.remove('hidden');
             ConstManager.gameSection.style.marginLeft = '40%';
-        } else if (ConstManager.gameSection.style.marginLeft === '40%') {
+        } else if (ConstManager.gameSection.style.marginLeft === '40%' && ConstManager.rulesSection.className !== ('hidden') || ConstManager.rulesText.className !== ('hidden') || ConstManager.leaderboardSection.className !== ('hidden')) {
+            ConstManager.rulesSection.classList.add('hidden');
+            ConstManager.rulesText.classList.add('hidden');
+            ConstManager.leaderboardSection.classList.add('hidden');
             ConstManager.settingsSection.classList.add('hidden');
             ConstManager.gameSection.style.marginLeft = '0px';
         }
