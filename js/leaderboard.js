@@ -13,7 +13,7 @@ export function createPlayerLeaderboard() {
 
     function updateLeaderboard() {
         playerListDiv.innerHTML = '';
-
+    
         const playerDataArray = [];
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
@@ -23,14 +23,23 @@ export function createPlayerLeaderboard() {
                 playerDataArray.push(playerData);
             }
         }
-
+    
         playerDataArray.sort((a, b) => b.highscore - a.highscore);
-
+    
         playerDataArray.forEach((playerData, index) => {
             const username = playerData.username;
             const highscore = playerData.highscore;
-            const profileImg = playerData.profileImg || 'assets/playerAvatar.jpg';
-
+            let profileImg = playerData.profileImg || 'assets/playerAvatar.jpg';
+    
+            const existingPlayerNode = playerListDiv.querySelector(`[data-username="${username}"]`);
+            if (existingPlayerNode) {
+                const existingPlayerImg = existingPlayerNode.querySelector('.leaderboardPlayerAvatar');
+                const existingPlayerImgSrc = existingPlayerImg.getAttribute('src');
+                if (existingPlayerImgSrc !== profileImg) {
+                    existingPlayerImg.src = profileImg;
+                }
+            }
+    
             let playerRanking = '';
             switch (index) {
                 case 0:
@@ -45,21 +54,23 @@ export function createPlayerLeaderboard() {
                 default:
                     playerRanking = '';
             }
-
+    
             if (highscore > 0) {
                 const playerDiv = document.createElement('div');
                 playerDiv.classList.add('leaderboardPlayerBG', 'innerShadow');
                 if (playerRanking) {
                     playerDiv.classList.add(playerRanking);
                 }
-
+                playerDiv.setAttribute('data-username', username);
+    
                 const playerAvatarImg = document.createElement('img');
                 playerAvatarImg.classList.add('leaderboardPlayerAvatar', 'outerShadow');
                 playerAvatarImg.alt = '';
-
+                playerAvatarImg.src = profileImg;
+    
                 const playerInfoBoxDiv = document.createElement('div');
                 playerInfoBoxDiv.classList.add('leaderboardInfoBox');
-
+    
                 const playerNameBtn = document.createElement('span');
                 playerNameBtn.classList.add('leaderboardPlayerName', 'textShadow');
                 playerNameBtn.textContent = username;
@@ -67,24 +78,23 @@ export function createPlayerLeaderboard() {
                 playerNameBtn.style.cursor = 'auto';
                 playerNameBtn.addEventListener('click', playerRegister);
                 playerNameBtn.removeEventListener('click', playerRegister);
-
+    
                 const playerHighscoreSpan = document.createElement('span');
                 playerHighscoreSpan.classList.add('leaderboardPlayerHighscore', 'textShadow');
                 playerHighscoreSpan.textContent = "Highscore: " + highscore;
-
+    
                 playerInfoBoxDiv.appendChild(playerNameBtn);
                 playerInfoBoxDiv.appendChild(document.createElement('br'));
                 playerInfoBoxDiv.appendChild(playerHighscoreSpan);
-
+    
                 playerDiv.appendChild(playerAvatarImg);
                 playerDiv.appendChild(playerInfoBoxDiv);
-
+    
                 playerListDiv.appendChild(playerDiv);
-
-                playerAvatarImg.src = profileImg;
             }
         });
     }
+    
 
     updateLeaderboard();
 

@@ -85,10 +85,16 @@ function registerPlayer() {
             const file = avatarInput.files[0];
             const reader = new FileReader();
             reader.onload = function(e) {
+                const MAX_IMAGE_SIZE = 1024 * 1024;
+                if (e.target.result.length > MAX_IMAGE_SIZE) {
+                    alert("Image size is too large. Please choose a smaller image.");
+                    return;
+                }
                 player.profileImg = e.target.result;
                 localStorage.setItem(playerName, JSON.stringify(player));
                 document.getElementById('playerAvatar').src = e.target.result;
                 alert("Player registered successfully!");
+                createPlayerLeaderboard();
             };
             reader.readAsDataURL(file);
         }
@@ -97,6 +103,7 @@ function registerPlayer() {
         player = new Player(playerName, 0, avatarImgData);
         localStorage.setItem(playerName, JSON.stringify(player));
         alert("Player registered successfully!");
+        createPlayerLeaderboard();
     }
 
     ConstManager.nameInput.value = "";
@@ -108,9 +115,9 @@ function registerPlayer() {
     ConstManager.playerNameInput.classList.add('hidden');
     ConstManager.playerRegistered = true;
 
-    createPlayerLeaderboard();
     updateUrlWithUsername(playerName);
 }
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
