@@ -470,6 +470,32 @@ body {
     letter-spacing: 1px;
 }
 
+.gameRecapBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #d6d3cf;
+    border-radius: 20px;
+    width: 300px;
+    height: 150px;
+    gap: 35px;
+}
+
+.gameRecapTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3a5a40;
+}
+
+.gameRecapText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3a5a40;
+    text-align: center;
+}
+
 .gridContainer {
   width: 315px;
   height: 320px;
@@ -797,6 +823,11 @@ body {
     
     .hardButton {
         width: 300px;
+    }
+
+    .gameRecapBox {
+        width: 400px;
+        height: 150px;
     }
 }
 

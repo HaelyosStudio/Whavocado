@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return colorProbabilities[randomIndex].color;
     }
 
-    let chosenDifficulty = 'medium'; // Default difficulty
+    let chosenDifficulty = 'easy'; // Default difficulty
 
     document.getElementById('easyButton').addEventListener('click', function() {
         chosenDifficulty = 'easy';
@@ -77,21 +77,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'easy':
                     timeoutDuration = 1000; // Easy difficulty
                     console.log("Easy difficulty applied");
-                    ConstManager.currentDiff.textContent = "Current difficulty : Easy";
+                    ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #4ea84f; font-weight: bold;'>Easy</span>";
                     break;
                 case 'medium':
                     timeoutDuration = 650; // Medium difficulty
                     console.log("Medium difficulty applied");
-                    ConstManager.currentDiff.textContent = "Current difficulty : Medium";
+                    ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #ec5f00; font-weight: bold;'>Medium</span>";
                     break;
                 case 'hard':
                     timeoutDuration = 450; // Hard difficulty
-                    ConstManager.currentDiff.textContent = "Current difficulty : Hard";
+                    ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #e94528; font-weight: bold;'>Hard</span>";
                     console.log("Hard difficulty applied");
                     break;
                 default:
                     timeoutDuration = 1000; // Default to easy difficulty
-                    ConstManager.currentDiff.textContent = "Current difficulty : Default";
+                    ConstManager.currentDiff.innerHTML = "Current difficulty : <span style='color: #4ea84f; font-weight: bold;'>Easy</span>";
                     console.log("Default difficulty applied");
             }
 
@@ -122,25 +122,45 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(colorChangeInterval);
         ConstManager.pauseButton.classList.add('hidden');
         ConstManager.startButton.classList.remove('hidden');
-
+    
         const username = getQueryParam('username');
-        const playerDataString = localStorage.getItem(getQueryParam('username'));
-        const playerData = JSON.parse(playerDataString);
-        const highscore = playerData.highscore;
-
-        if (ConstManager.score > highscore) {
-            localStorage.setItem(username, JSON.stringify({
-                username: username,
-                highscore: ConstManager.score
-            }));
-            createPlayerLeaderboard();
+        const playerDataString = localStorage.getItem(username);
+        const playerData = playerDataString ? JSON.parse(playerDataString) : null;
+        const highscore = playerData ? playerData.highscore : 0;
+    
+        if (playerData !== null) {
+            if (ConstManager.score > highscore) {
+                localStorage.setItem(username, JSON.stringify({
+                    username: username,
+                    highscore: ConstManager.score
+                }));
+                ConstManager.gameRecapBox.classList.remove('hidden');
+                ConstManager.gameRecap.innerHTML = `Your score is : <span style='color: #428643; font-weight: bold;'>${ConstManager.score}</span><br> New Highscore!`;
+                setTimeout(function() {
+                    ConstManager.gameRecapBox.classList.add('hidden');
+                }, 4000)
+                createPlayerLeaderboard();
+            } else {
+                ConstManager.gameRecapBox.classList.remove('hidden')
+                ConstManager.gameRecap.innerHTML = `Your score is : <span style='color: #428643; font-weight: bold;'>${ConstManager.score}</span>`;
+                setTimeout(function() {
+                    ConstManager.gameRecapBox.classList.add('hidden');
+                }, 4000)
+                createPlayerLeaderboard();
+            }
+        } else {
+            ConstManager.gameRecapBox.classList.remove('hidden')
+            ConstManager.gameRecap.innerHTML = `Your score is : <span style='color: #428643; font-weight: bold;'>${ConstManager.score}</span><br>You didn't register.<br>Your score won't be saved.`;
+            setTimeout(function() {
+                ConstManager.gameRecapBox.classList.add('hidden');
+            }, 4000)
         }
-
+    
         document.getElementById('timerText').textContent = VarManager.timer = 30;
         ConstManager.score = 0;
         ConstManager.scoreDisplay.textContent = "Score : " + ConstManager.score;
         updateHighscoreDisplay();
-    }
+    }    
 
     function updateHighscoreDisplay() {
         const username = getQueryParam('username');
@@ -191,27 +211,32 @@ document.addEventListener('DOMContentLoaded', function() {
         startTimer();
         ConstManager.gameRunning = true;
         colorChangeInterval = setInterval(() => {
-            applyRandomColorToAvocado(ConstManager.avocadoHoles, chosenDifficulty);
-            ConstManager.pauseButton.classList.remove('hidden');
-            ConstManager.startButton.classList.add('hidden');
+            if(ConstManager.gameRunning){
+                applyRandomColorToAvocado(ConstManager.avocadoHoles, chosenDifficulty);
+                ConstManager.pauseButton.classList.remove('hidden');
+                ConstManager.startButton.classList.add('hidden');
+            }
         }, 1500);
-
+    
         ConstManager.avocadoHoles.forEach(avocadoHole => {
             avocadoHole.addEventListener('click', function() {
-                const backgroundColor = getComputedStyle(avocadoHole).backgroundColor;
-                if (backgroundColor === 'rgb(167, 199, 231)') {
-                    updateScore(10);
-                } else if (backgroundColor === 'rgb(250, 160, 160)') {
-                    updateScore(-15);
-                } else if (backgroundColor === 'rgb(250, 200, 152)') {
-                    updateScore(25)
+                if(ConstManager.gameRunning){
+                    const backgroundColor = getComputedStyle(avocadoHole).backgroundColor;
+                    if (backgroundColor === 'rgb(167, 199, 231)') {
+                        updateScore(10);
+                    } else if (backgroundColor === 'rgb(250, 160, 160)') {
+                        updateScore(-15);
+                    } else if (backgroundColor === 'rgb(250, 200, 152)') {
+                        updateScore(25)
+                    }
+                    avocadoHole.style.backgroundColor = "#a3b18a";
                 }
-                avocadoHole.style.backgroundColor = "#a3b18a";
             });
         });
-
+    
         ConstManager.pauseButton.addEventListener('click', togglePause);
     }
+    
 
     ConstManager.startButton.addEventListener('click', gameInit);
 });

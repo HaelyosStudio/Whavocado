@@ -28,6 +28,8 @@ export const ConstManager = {
     mediumButton: document.getElementById('mediumButton'),
     hardButton: document.getElementById('hardButton'),
     currentDiff: document.getElementById('currentDiff'),
+    gameRecapBox: document.getElementById('gameRecapBox'),
+    gameRecap: document.getElementById('gameRecap'),
 };
 
 export const VarManager = {

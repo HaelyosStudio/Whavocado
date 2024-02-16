@@ -2,6 +2,8 @@ import { ConstManager } from "./class/ConstManager.js";
 import { Player } from "./class/playerInfos.js";
 import { createPlayerLeaderboard } from "./leaderboard.js";
 
+alert("To save your score you need to connect by clicking on top left corner.")
+
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -85,7 +87,7 @@ function registerPlayer() {
             const file = avatarInput.files[0];
             const reader = new FileReader();
             reader.onload = function(e) {
-                const MAX_IMAGE_SIZE = 1024 * 1024;
+                const MAX_IMAGE_SIZE = 5 * 1024 * 1024;
                 if (e.target.result.length > MAX_IMAGE_SIZE) {
                     alert("Image size is too large. Please choose a smaller image.");
                     return;
